@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>HASN</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag %>
+
+    <div align="center"><h1 style="font-family: Snap ITC; font-size: 48px; color: #002d77;">HASN<img src="/assets/logo.png" height="46px" width="70px"></h1></div>
+  	<br>
+
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <br><br>
+  	<div align="center">Copyright © 2017 Alex's Web Development. All rights reserved.</div>
+
+  </body>
+</html>
