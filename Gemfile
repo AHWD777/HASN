@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#Devise (authentication)
+gem 'devise'
+gem 'bcrypt', platforms: :ruby
+
 #Navbar (bootstrap)
 gem 'bootstrap-sass', '~>3.3.5'
 gem 'jquery-rails'
