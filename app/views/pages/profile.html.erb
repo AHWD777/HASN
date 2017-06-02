@@ -14,11 +14,14 @@
 		</div>
 	</div>
 	<div class="col-xs-6">
+	<%= render "/components/post_form" %>
+	<% for @p in @posts %>
 		<div class="panel panel-default">
   			<div class="panel-body">
-				Posts
+				<%= @p.content %>
 			</div>
 		</div>
+	<% end %>
 	</div>
 	<div class="col-xs-3">
 		<div class="panel panel-default">
@@ -26,10 +29,6 @@
 				Who to suscribe
 			</div>
 		</div>
-	</div>
-</div>
-<div class="rows">
-	<div class="col-xs-3 col-xs-offset-9">
 		<div class="panel panel-default">
   			<div class="panel-body">
 				Trends

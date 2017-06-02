@@ -14,3 +14,16 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+	background-color: white;
+}
+
+body {
+	background-color: #f2f7ff;
+}
+
+.navbar-brand {
+	position: absolute;
+	left: 46%;
+}

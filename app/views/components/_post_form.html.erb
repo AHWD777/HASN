@@ -1,0 +1,13 @@
+<%= form_for(@newPost) do |f| %>
+
+<center>
+  <span class="field">
+    <%= f.text_field :content, autofocus: true %>
+  </span>
+
+  <span class="actions">
+    <%= f.submit "Add my post!" %>
+  </span><br /><br />
+</center>
+
+<% end %>
