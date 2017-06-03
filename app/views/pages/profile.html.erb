@@ -50,7 +50,7 @@
 		<%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
 		<div class="panel panel-default">
   			<div class="panel-body">
-				<b>You could suscribe to :</b>
+				<b>You could suscribe to :</b><br />
 				<% for @u in @toFollow %>
 					<a href="/user/<%= @u.username %>"><%= @u.username %></a><br />
 				<% end %>

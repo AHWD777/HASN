@@ -1,9 +1,20 @@
 class PagesController < ApplicationController
 
   def home
-    @posts = Post.all
+    following = Array.new
+    for @f in current_user.following do
+      following.push(@f.id)
+    end
+
+    @posts = Post.where("user_id IN (?)", following)
     @newPost = Post.new
     @myPosts = Post.all.where("user_id = ?", User.find_by_username(current_user.username))
+
+  end
+
+  def search
+    search = params[:search]
+    redirect_to "/user/#{search}"
   end
 
   def index
@@ -26,6 +37,9 @@ class PagesController < ApplicationController
     @toFollow = User.all.last(5)
     @newPost = Post.new
     @myPosts = Post.all.where("user_id = ?", User.find_by_username(current_user.username))
+  end
+
+  def help
   end
 
 end
