@@ -1,13 +1,22 @@
 <%= form_for(@newPost) do |f| %>
 
-<center>
-  <span class="field">
-    <%= f.text_field :content, autofocus: true %>
-  </span>
+<div class="panel panel-default post-panel">
+      <div class="panel-body row">
+        <div class="col-sm-1">
+          <span class="avatar"><span class="invisible">_</span><%= current_user.username[0,1] %><span class="invisible">_</span></span><span class="invisible">_</span>
+        </div>
+        <div class="col-sm-11">
+        <center>
+            <span class="field">
+              <%= f.text_field :content, autofocus: true, class: "form-control" %>
+            </span><br />
 
-  <span class="actions">
-    <%= f.submit "Add my post!" %>
-  </span><br /><br />
-</center>
+            <span class="actions">
+              <%= f.submit "Add my post!" %>
+            </span><br />
+          </center>
+        </div>
+    </div>
+</div>
 
 <% end %>

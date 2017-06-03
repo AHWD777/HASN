@@ -25,5 +25,26 @@ body {
 
 .navbar-brand {
 	position: absolute;
-	left: 48%;
+	left: 47%;
+}
+
+.post-panel {
+	margin-top: -17px;
+}
+
+.avatar {
+	color: white;
+	font-family: Broadway;
+	font-size: 29px;
+	border: 5px solid black;
+	background-color: blue;
+}
+
+.invisible {
+	color: blue;
+	font-size: 11px;
+}
+
+.margin {
+	margin-left: 10px;
 }
