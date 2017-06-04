@@ -27,6 +27,13 @@
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div><br />
 
+  <!--<div class="field" align="center">
+    <%#= f.file_field :avatar %>
+    <%# if @user.avatar? %>
+      <%#= image_tag @user.avatar.url(:thumb) %>
+    <%# end %>
+  </div><br />-->
+
   <div class="actions">
     <center><%= f.submit "Update", class: "btn btn-primary" %></center>
   </div>

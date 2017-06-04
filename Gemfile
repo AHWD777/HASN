@@ -7,11 +7,14 @@ end
 
 #Devise (authentication)
 gem 'devise'
-gem 'bcrypt', platforms: :ruby
+gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
 
 #Navbar (bootstrap)
 gem 'bootstrap-sass', '~>3.3.5'
 gem 'jquery-rails'
+
+# Image upload
+gem "paperclip", "~> 5.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'

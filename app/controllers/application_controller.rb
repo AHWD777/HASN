@@ -7,9 +7,15 @@ class ApplicationController < ActionController::Base
   #protect the database
   protected
   def configure_permitted_parameters
-  	devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
+  	devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me, :avatar) }
   	devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
-  	devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :remember_me) }
+  	devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :remember_me, :avatar, :current_password) }
   end
+
+  Paperclip.options[:content_type_mappings] = {
+  :jpg => "image/jpeg",
+  :png => "image/png",
+  :gif => "image/gif"
+  }
 
 end

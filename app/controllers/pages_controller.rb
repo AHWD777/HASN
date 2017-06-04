@@ -27,6 +27,7 @@ class PagesController < ApplicationController
   		redirect_to root_path, :notice=> "User not found!"
   	end
 
+    @posts2 = Post.all.where("user_id = ?", User.find_by_username(current_user.username))
   	@posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]))
     @newPost = Post.new
     @toFollow = User.all.last(5)

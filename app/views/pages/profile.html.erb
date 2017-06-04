@@ -19,7 +19,7 @@
   					Suscribers:
   				</div>
   				<div class="col-sm-1" style="margin-left: 12px; margin-top: 20px;">
-  					<%= @posts.length %><br />
+  					<%= @posts2.length %><br />
   				</div>
   				<div class="col-sm-1" style="margin-left: 1px; margin-top: 40px;">
   					<%= current_user.followers.count %>
@@ -50,7 +50,7 @@
 		<%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
 		<div class="panel panel-default">
   			<div class="panel-body">
-				<b>You could suscribe to :</b><br />
+				<b>You could suscribe to :</b><br /><br />
 				<% for @u in @toFollow %>
 					<a href="/user/<%= @u.username %>"><%= @u.username %></a><br />
 				<% end %>
