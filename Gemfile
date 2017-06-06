@@ -8,13 +8,14 @@ end
 #Devise (authentication)
 gem 'devise'
 gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+gem 'acts_as_votable'
 
 #Navbar (bootstrap)
 gem 'bootstrap-sass', '~>3.3.5'
 gem 'jquery-rails'
 
 # Image upload
-gem "paperclip", "~> 5.0.0"
+gem 'carrierwave'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'

@@ -16,6 +16,14 @@ class PostsController < ApplicationController
 		end
 	end
 
+    def vote
+      if !current_user.liked? @p
+        @p.liked_by current_user
+      elsif current_user.liked? @p
+        @p.unliked_by current_user
+      end
+    end
+
 	private
 	def post_params
 		params.require(:post).permit(:user_id, :content)

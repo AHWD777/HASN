@@ -1,4 +1,3 @@
-
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,6 +13,7 @@ class User < ActiveRecord::Base
          
          
          # helper methods
+         mount_uploader :avatar, AvatarUploader
          
          # follow another user
          def follow(other)
@@ -30,11 +30,6 @@ class User < ActiveRecord::Base
            following.include?(other)
          end
 
-         has_attached_file :avatar
-         # Validate content type
-         validates_attachment_content_type :avatar, content_type: /\Aimage/
-         # Validate filename
-         validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
-         # Explicitly do not validate
-         do_not_validate_attachment_file_type :avatar
+         # Vote
+         acts_as_voter
 end

@@ -1,7 +1,7 @@
 <div class="rows">
 	<div class="col-xs-12">
 		<div class="jumbotron" style="background-color: #a4c6fc;">
-  			<center><span class="banner"><%= @username %></span></center>
+  			<center><span class="banner"><%= @username %> <img src="<%= current_user.avatar_url.to_s %>" height="100px" width="100px"></span></center>
   			<a name="top"></a>
 		</div>
 	</div>
@@ -11,7 +11,7 @@
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="col-sm-1">
-  					<span class="avatar" style="margin-left: -20px;"><span class="invisible">_</span><%= current_user.username[0,1] %><span class="invisible">_</span></span><span class="invisible">_</span>
+  					<img src="<%= current_user.avatar_url.to_s %>" height="35px" width="35px">
   				</div>
   				<div class="col-sm-1" style="margin-left: 10px;">
   				<b><%= current_user.username %></b><br />
@@ -33,7 +33,7 @@
 		<div class="panel panel-default post-panel">
   			<div class="panel-body row">
   			<div class="col-sm-1">
-  				<span class="avatar"><% string_username = User.find(@p.user_id).username.to_s %><span class="invisible">_</span><%= string_username[0,1] %><span class="invisible">_</span></span><span class="invisible">_</span>
+  				<img src="<%= current_user.avatar_url.to_s %>" height="35px" width="35px">
   			</div>
   			<div class="col-sm-11">
   				<%= @p.content %>

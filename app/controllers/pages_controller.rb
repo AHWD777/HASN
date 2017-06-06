@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  respond_to :js, :json, :html
 
   def home
     following = Array.new
