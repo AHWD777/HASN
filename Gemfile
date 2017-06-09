@@ -20,7 +20,9 @@ gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use heroku database
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
+gem 'rails_12factor'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

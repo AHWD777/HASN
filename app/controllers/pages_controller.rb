@@ -15,10 +15,18 @@ class PagesController < ApplicationController
 
   def search
     search = params[:search]
-    redirect_to "/user/#{search}"
+    if params[:search] == "user_list"
+      redirect_to "/user_list"
+    else
+      redirect_to "/user/#{search}"
+    end
   end
 
   def index
+  end
+
+  def user_list
+    @list = User.all.sort.reverse
   end
 
   def profile

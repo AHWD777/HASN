@@ -20,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-xs-6">
+	<div class="col-xs-6" style="margin-top: 17px;">
 		<%= render "/components/post_form" %><br />
 		<% for @p in @posts %>
 			<div class="panel panel-default post-panel">
@@ -32,7 +32,7 @@
 	  				<%= @p.content %>
 	  			</div>
 				<div class="col-sm-12 post-under">
-					Created by <b><span id="username"><a href="/user/<%= User.find(@p.user_id).username %>"><%= User.find(@p.user_id).username %></a></span></b> on <i><%= @p.created_at.to_formatted_s(:short) %></i>
+					Created by <b><span id="username"><a href="/user/<%= User.find(@p.user_id).username %>"><%= User.find(@p.user_id).username %></a></span></b> on <i><%= @p.created_at.localtime.to_formatted_s(:short) %></i>
 				</div>
 				</div>
 			</div>

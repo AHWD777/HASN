@@ -1,0 +1,5 @@
+<h3><center>This is the list of all HASN's users</center></h3><br />
+
+<% for @u in @list %>
+	<center><a href="/user/<%= @u.username %>"><%= @u.username %></a><br /></center>
+<% end %>

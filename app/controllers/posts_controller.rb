@@ -24,6 +24,22 @@ class PostsController < ApplicationController
       end
     end
 
+    def share
+    	@cur_user = current_user.username.to_s
+    	@post_user = User.find(@p.user_id).username.to_s
+    	@content = TEST
+    	@post = Post.new("#{@cur_user} shared a post : #{@content}")
+		@post.user_id = current_user.id
+		respond_to do |f|
+			if (@post.save)
+				f.html { redirect_to "", notice: "Post shared!" }
+			else
+				f.html { redirect_to "", notice: "An error occured..." }
+			end
+		end
+    end
+    helper_method :share
+
 	private
 	def post_params
 		params.require(:post).permit(:user_id, :content)

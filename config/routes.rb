@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/explore' => 'pages#explore'
   post '/home' => 'pages#search'
   get '/help' => 'pages#help'
+  get '/share' => 'posts#share'
+  get '/user_list' => 'pages#user_list'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
